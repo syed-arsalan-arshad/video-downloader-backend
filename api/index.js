@@ -848,7 +848,7 @@ app.post("/downloadContent", (request, response) => {
   const container = request.body.container;
   let videoTitle = request.body.videoTitle;
   videoTitle = videoTitle.replaceAll(" ", "_");
-  const filePath = "../downloads/" + videoTitle + "." + container;
+  const filePath = "/tmp/" + videoTitle + "." + container;
   const URL = request.body.URL;
   if (fs.existsSync(filePath.toString())) {
     console.log(`The file ${filePath} exists. `);
@@ -861,7 +861,7 @@ app.post("/downloadContent", (request, response) => {
   ytdl(URL, {
     filter: (format) => format.itag === parseInt(itagValue),
   })
-    .pipe(fs.createWriteStream("test.mp4"))
+    .pipe(fs.createWriteStream("/tmp/test.mp4"))
     .on("finish", () => {
       console.log("Video downloaded successfully!");
       return response.send({

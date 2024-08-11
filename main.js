@@ -136,7 +136,7 @@ app.post("/downloadContent", (request, response) => {
   const container = request.body.container;
   let videoTitle = request.body.videoTitle;
   videoTitle = videoTitle.replaceAll(" ", "_");
-  const filePath = "../downloads/" + videoTitle + "." + container;
+  const filePath = "./downloads/" + videoTitle + "." + container;
   const URL = request.body.URL;
   if (fs.existsSync(filePath.toString())) {
     console.log(`The file ${filePath} exists. `);
@@ -155,7 +155,7 @@ app.post("/downloadContent", (request, response) => {
       return response.send({
         status: "success",
         message: "video ready to download",
-        path: "./downloads/" + videoTitle + "." + container,
+        path: "/downloads/" + videoTitle + "." + container,
       });
     })
     .on("error", (err) => {

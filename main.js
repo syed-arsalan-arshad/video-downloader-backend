@@ -8,7 +8,9 @@ const ytdl = require("@distube/ytdl-core");
 
 app.use(cors());
 app.use(express.json());
-
+app.get("/health", (req, res) => {
+  return res.send("Hello World!");
+});
 app.get("/", (req, res) => {
   // const url = req.body.url;
   const id = "https://youtu.be/HFHl_tXSyaE?si=gR1zIOJV5mUWLhLn";

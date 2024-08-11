@@ -875,6 +875,7 @@ app.post("/downloadContent", (request, response) => {
   }
   ytdl(URL, {
     filter: (format) => format.itag === parseInt(itagValue),
+    agent,
   })
     .pipe(fs.createWriteStream("/tmp/test.mp4"))
     .on("finish", () => {

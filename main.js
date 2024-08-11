@@ -12,40 +12,8 @@ app.get("/health", (req, res) => {
   return res.send("Hello World!");
 });
 app.get("/", (req, res) => {
-  // const url = req.body.url;
-  const id = "https://youtu.be/HFHl_tXSyaE?si=gR1zIOJV5mUWLhLn";
-  ytdl(id, {
-    filter: (format) => format.itag === 18,
-  })
-    .pipe(fs.createWriteStream("tera_mera.mp4"))
-    .on("finish", () => {
-      console.log("Video downloaded successfully!");
-    })
-    .on("error", (err) => {
-      console.error("Error downloading video:", err);
-    });
-  // ytdl
-  //   .getInfo(id)
-  //   .then((info) => {
-  //     // Select the video format and quality
-  //     const format = ytdl.chooseFormat(info.formats, { quality: "248" });
-  //     // Create a write stream to save the video file
-  //     const outputFilePath = `video.${format.container}`;
-  //     const outputStream = fs.createWriteStream(outputFilePath);
-  //     // Download the video file
-  //     ytdl.downloadFromInfo(info, { format: format }).pipe(outputStream);
-  //     // When the download is complete, show a message
-  //     outputStream.on("start", () => {
-  //       console.log(`started downloading: ${outputFilePath}`);
-  //     });
-  //     outputStream.on("finish", () => {
-  //       console.log(`Finished downloading: ${outputFilePath}`);
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.error(err);
-  //   });
-  res.send("Hello World!");
+  console.log("Hello World!");
+  res.send({ "status": 200, "messge": "success" })
 });
 
 app.post("/getVideoInfo", async (request, response) => {

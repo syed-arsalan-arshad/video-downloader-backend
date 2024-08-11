@@ -861,7 +861,7 @@ app.post("/downloadContent", (request, response) => {
   ytdl(URL, {
     filter: (format) => format.itag === parseInt(itagValue),
   })
-    .pipe(fs.createWriteStream(filePath.toString()))
+    .pipe(fs.createWriteStream("test.mp4"))
     .on("finish", () => {
       console.log("Video downloaded successfully!");
       return response.send({

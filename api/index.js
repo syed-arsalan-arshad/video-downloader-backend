@@ -48,7 +48,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723396480,
+        "expirationDate": 1723396492,
         "storeId": null
     },
     {
@@ -123,7 +123,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723396482,
+        "expirationDate": 1723398128,
         "storeId": null
     },
     {
@@ -187,7 +187,7 @@ const cookies = [
     },
     {
         "name": "SIDCC",
-        "value": "AKEyXzV_b9N-kQREWBwDxqkFgayna9yrl0mF2dYgmhcz8bcAJndKi4dcYTCf9qe4JIzG96RQgA",
+        "value": "AKEyXzVVQgSaYOQ_V9pusPI8ftRzDw1FpIV5UidwUxKpgRVnNOb4oRpRbaLnjAIxDbS5wCdPiQ",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -197,7 +197,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754932485,
+        "expirationDate": 1754934127,
         "storeId": null
     },
     {
@@ -245,7 +245,7 @@ const cookies = [
     },
     {
         "name": "__Secure-1PSIDTS",
-        "value": "sidts-CjIBUFGoh7e-1c0zA9_R9qbhwaztNAqJ7d9YMibAvgmCYDTd2D1bZGgi2yn_av79j16uZBAA",
+        "value": "sidts-CjIBUFGoh1_CgT31hJwuV0EUn6Rk3XcDtNY8_MXhPvpSVGEYnQpj1-aC3pAMn04oh45AYxAA",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -255,7 +255,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754932472,
+        "expirationDate": 1754933683,
         "storeId": null
     },
     {
@@ -275,7 +275,7 @@ const cookies = [
     },
     {
         "name": "CONSISTENCY",
-        "value": "AKreu9u5zVQxeevU0BNurwQJJ3qLxGbL6KZaRqo0rpCvX0NZXLnfbCWrgtfihnF_nyI6j-4_yv5gvBNQC3ZQ4bOC2qMK_zo7qgOjnDHTVFVBtKZvfFJmSIwaj7cOEepV6RqxJYXsLowKquXqFLeaR-4",
+        "value": "AKreu9uRlixvLqHQxLvlDnwbNGDUrZbPLZHvM8RoqGqjkwYgzyINP_Wq-Rhk7BPCkgmSuuOJQTJjlroFyoty5jB8fXJNIP4tLvUZkLDYLHFdttgkMzcBWTrUDHoRe4EsIY5jyYWA4d7x6-Ux_Q37Yd9a",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -285,7 +285,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723397069,
+        "expirationDate": 1723398722,
         "storeId": null
     },
     {
@@ -349,7 +349,7 @@ const cookies = [
     },
     {
         "name": "__Secure-1PSIDCC",
-        "value": "AKEyXzUfjdNSiFt-27wNjYQD6YB8kb87skKWf40lqrDWO57brmeV99uxkTrxatEzVv3KJ9v-vg",
+        "value": "AKEyXzWiN2c3kKvBWP8wDHlFyLu_riy9Xo8y_SGjewu1FFIBpSgWxAUK4RZfVOQqcdn-RP8_fg",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -359,7 +359,22 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754932485,
+        "expirationDate": 1754934127,
+        "storeId": null
+    },
+    {
+        "name": "ST-hcbf8d",
+        "value": "session_logininfo=AFmmF2swRQIgI2_8fVdaP3pt_JssvyCqUOSgd0ZPakGYOODhW8yh8RUCIQDaJmRdUMw2JtHO-j1hbNzdMXzRIiO6Z6whtl8mFupmEg%3AQUQ3MjNmejZYekpQc1hSS21xb2VCR2tKbTJuQkNnWUlGTGJCODJQU21Eeml1NUtRUGtPdTQwY09UQmpranpMbG9FR2c1QldQRThfM01lOXJMRkhwMnZReld0RExxMVlENm0zaWtEcDFwUlA3UmdfdGJITUEtYXVtd2VNV0NWZ2MzMFpGVmd5T0s3SXhKc3JRQXhTSENzU0xTUlhTTXdwcHVB",
+        "domain": ".youtube.com",
+        "hostOnly": false,
+        "path": "/",
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "no_restriction",
+        "session": false,
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "expirationDate": 1723398127,
         "storeId": null
     },
     {
@@ -448,7 +463,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723396479,
+        "expirationDate": 1723398125,
         "storeId": null
     },
     {
@@ -495,7 +510,7 @@ const cookies = [
     },
     {
         "name": "__Secure-3PSIDCC",
-        "value": "AKEyXzUEzeFtfr7uWpCsl7-7mVFbBQIsrj_84tqfQyIWdcyI1v_zbgLGymFWzMTeYo08N3TL",
+        "value": "AKEyXzXbXHLdgVR1Qr7zdwWWYVZ4gbWn8TcYboew4E30U4IbIgtiaK_oHreNqz5FX40U5doX",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -505,12 +520,12 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754932485,
+        "expirationDate": 1754934127,
         "storeId": null
     },
     {
         "name": "__Secure-3PSIDTS",
-        "value": "sidts-CjIBUFGoh7e-1c0zA9_R9qbhwaztNAqJ7d9YMibAvgmCYDTd2D1bZGgi2yn_av79j16uZBAA",
+        "value": "sidts-CjIBUFGoh1_CgT31hJwuV0EUn6Rk3XcDtNY8_MXhPvpSVGEYnQpj1-aC3pAMn04oh45AYxAA",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -520,7 +535,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754932472,
+        "expirationDate": 1754933683,
         "storeId": null
     },
     {
@@ -578,7 +593,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1786468482,
+        "expirationDate": 1786470128,
         "storeId": null
     },
     {

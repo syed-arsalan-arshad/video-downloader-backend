@@ -49,7 +49,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723398136,
+        "expirationDate": 1723439318,
         "storeId": null
     },
     {
@@ -124,7 +124,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723439304,
+        "expirationDate": 1723441997,
         "storeId": null
     },
     {
@@ -188,7 +188,7 @@ const cookies = [
     },
     {
         "name": "SIDCC",
-        "value": "AKEyXzVGdZ5l29RmASSm59ikh7lY2SMDQzTC-xXghpmkY37OyosLGlMbYFFZ6IWg4jVTRpcf2g",
+        "value": "AKEyXzVDtLqCR1bGeEcq-RJxwUGJR4gSyxEEeHO9_6IdRb9gKUjko7raPJ-6d5qo3j3gFIoagA",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -198,7 +198,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754975302,
+        "expirationDate": 1754977995,
         "storeId": null
     },
     {
@@ -246,7 +246,7 @@ const cookies = [
     },
     {
         "name": "__Secure-1PSIDTS",
-        "value": "sidts-CjIBUFGoh6fhL5qIlPQRz7hNrYQHcpegAA-6f7TMw54UIft_FqxpuAbhx9wlfyBF-Gv36hAA",
+        "value": "sidts-CjIBUFGoh2MvLk77ijH0r2glZHblTEDHuL0Gw-vs1ErsGtLzYua0OAnrv9_3I3vcPOZHCRAA",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -256,7 +256,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754975209,
+        "expirationDate": 1754977628,
         "storeId": null
     },
     {
@@ -350,7 +350,7 @@ const cookies = [
     },
     {
         "name": "__Secure-1PSIDCC",
-        "value": "AKEyXzUMcR1Or-JVazYQJOakbScPIYBinQ2dlr88m5VUqn8Oh9QzB2OLhWr0PbTIBhm88vfYlg",
+        "value": "AKEyXzWvtRFinhT8SrphPCRhoEqbgNe1dmamVYIsgH6pvCpVij-CPKp4w0DEwyRLIJmuvyF_3w",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -360,7 +360,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754975302,
+        "expirationDate": 1754977995,
         "storeId": null
     },
     {
@@ -464,7 +464,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723439301,
+        "expirationDate": 1723441994,
         "storeId": null
     },
     {
@@ -511,7 +511,7 @@ const cookies = [
     },
     {
         "name": "__Secure-3PSIDCC",
-        "value": "AKEyXzUtpVHafJSerWHAB9l5HWHdeUHxLqs-dUWczRv92CIz5UwJKwYym_hjZF-pdd2E9RZU",
+        "value": "AKEyXzUHYY1POoZtTjcvDR80wWQ1ErhpL2s11GzOVatQN8ON1M2--xCCuX0bMhY1ILrAxV6S",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -521,12 +521,12 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754975302,
+        "expirationDate": 1754977995,
         "storeId": null
     },
     {
         "name": "__Secure-3PSIDTS",
-        "value": "sidts-CjIBUFGoh6fhL5qIlPQRz7hNrYQHcpegAA-6f7TMw54UIft_FqxpuAbhx9wlfyBF-Gv36hAA",
+        "value": "sidts-CjIBUFGoh2MvLk77ijH0r2glZHblTEDHuL0Gw-vs1ErsGtLzYua0OAnrv9_3I3vcPOZHCRAA",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -536,7 +536,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754975209,
+        "expirationDate": 1754977628,
         "storeId": null
     },
     {
@@ -594,7 +594,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1786511304,
+        "expirationDate": 1786513997,
         "storeId": null
     },
     {
@@ -864,9 +864,7 @@ app.post("/downloadContent", (request, response) => {
   const container = request.body.container;
   let videoTitle = request.body.videoTitle;
   videoTitle = videoTitle.replaceAll(" ", "_");
-    console.log(path.join(__dirname));
-  const filePath = path.join(__dirname, "../downloads", `${videoTitle}.${container}`);
-    fs.mkdirSync(path.join(__dirname, "../downloads"), { recursive: true });
+  const filePath = `/tmp/${videoTitle}.${container}`;
   const URL = request.body.URL;
   if (fs.existsSync(filePath.toString())) {
     console.log(`The file ${filePath} exists. `);
@@ -883,9 +881,8 @@ app.post("/downloadContent", (request, response) => {
     .pipe(fs.createWriteStream(filePath))
     .on("finish", () => {
       console.log("Video downloaded successfully!");
-      return response.download(filePath, `${videoTitle}.mp4` , () => {
-          fs.unlinkSync(filePath);
-      })
+        response.setHeader('Content-disposition', 'attachment; filename='+videoTitle+'.mp4');
+       response.download(filePath, `${videoTitle}.mp4`);
     })
     .on("error", (err) => {
       console.error("Error downloading video:", err);

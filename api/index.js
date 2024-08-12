@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 const fs = require("fs");
+const path = require("path");
 const ytdl = require("@distube/ytdl-core");
 const cookies = [
     {
@@ -863,7 +864,7 @@ app.post("/downloadContent", (request, response) => {
   const container = request.body.container;
   let videoTitle = request.body.videoTitle;
   videoTitle = videoTitle.replaceAll(" ", "_");
-  const filePath = "/tmp/" + videoTitle + "." + container;
+  const filePath = path.join(__dirname, "../downloads", `${videoTitle}.$container{}`);
   const URL = request.body.URL;
   if (fs.existsSync(filePath.toString())) {
     console.log(`The file ${filePath} exists. `);
@@ -877,11 +878,11 @@ app.post("/downloadContent", (request, response) => {
     filter: (format) => format.itag === parseInt(itagValue),
     agent,
   })
-    .pipe(fs.createWriteStream("/tmp/test1.mp4"))
+    .pipe(fs.createWriteStream(filePath))
     .on("finish", () => {
       console.log("Video downloaded successfully!");
-      return response.download("/tmp/test1.mp4", `${videoTitle}.mp4` , () => {
-          fs.unlinkSync("/tmp/test1.mp4");
+      return response.download(filePath, `${videoTitle}.mp4` , () => {
+          fs.unlinkSync(filePath);
       })
     })
     .on("error", (err) => {

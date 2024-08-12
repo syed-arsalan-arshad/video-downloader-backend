@@ -864,7 +864,9 @@ app.post("/downloadContent", (request, response) => {
   const container = request.body.container;
   let videoTitle = request.body.videoTitle;
   videoTitle = videoTitle.replaceAll(" ", "_");
-  const filePath = path.join(__dirname, "../downloads", `${videoTitle}.$container{}`);
+    console.log(path.join(__dirname));
+  const filePath = path.join(__dirname, "../downloads", `${videoTitle}.${container}`);
+    fs.mkdirSync(path.join(__dirname, "../downloads"), { recursive: true });
   const URL = request.body.URL;
   if (fs.existsSync(filePath.toString())) {
     console.log(`The file ${filePath} exists. `);

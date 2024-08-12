@@ -48,7 +48,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723396492,
+        "expirationDate": 1723398136,
         "storeId": null
     },
     {
@@ -123,7 +123,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723398128,
+        "expirationDate": 1723439304,
         "storeId": null
     },
     {
@@ -187,7 +187,7 @@ const cookies = [
     },
     {
         "name": "SIDCC",
-        "value": "AKEyXzVVQgSaYOQ_V9pusPI8ftRzDw1FpIV5UidwUxKpgRVnNOb4oRpRbaLnjAIxDbS5wCdPiQ",
+        "value": "AKEyXzVGdZ5l29RmASSm59ikh7lY2SMDQzTC-xXghpmkY37OyosLGlMbYFFZ6IWg4jVTRpcf2g",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -197,7 +197,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754934127,
+        "expirationDate": 1754975302,
         "storeId": null
     },
     {
@@ -245,7 +245,7 @@ const cookies = [
     },
     {
         "name": "__Secure-1PSIDTS",
-        "value": "sidts-CjIBUFGoh1_CgT31hJwuV0EUn6Rk3XcDtNY8_MXhPvpSVGEYnQpj1-aC3pAMn04oh45AYxAA",
+        "value": "sidts-CjIBUFGoh6fhL5qIlPQRz7hNrYQHcpegAA-6f7TMw54UIft_FqxpuAbhx9wlfyBF-Gv36hAA",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -255,7 +255,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754933683,
+        "expirationDate": 1754975209,
         "storeId": null
     },
     {
@@ -349,7 +349,7 @@ const cookies = [
     },
     {
         "name": "__Secure-1PSIDCC",
-        "value": "AKEyXzWiN2c3kKvBWP8wDHlFyLu_riy9Xo8y_SGjewu1FFIBpSgWxAUK4RZfVOQqcdn-RP8_fg",
+        "value": "AKEyXzUMcR1Or-JVazYQJOakbScPIYBinQ2dlr88m5VUqn8Oh9QzB2OLhWr0PbTIBhm88vfYlg",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -359,7 +359,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754934127,
+        "expirationDate": 1754975302,
         "storeId": null
     },
     {
@@ -463,7 +463,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1723398125,
+        "expirationDate": 1723439301,
         "storeId": null
     },
     {
@@ -510,7 +510,7 @@ const cookies = [
     },
     {
         "name": "__Secure-3PSIDCC",
-        "value": "AKEyXzXbXHLdgVR1Qr7zdwWWYVZ4gbWn8TcYboew4E30U4IbIgtiaK_oHreNqz5FX40U5doX",
+        "value": "AKEyXzUtpVHafJSerWHAB9l5HWHdeUHxLqs-dUWczRv92CIz5UwJKwYym_hjZF-pdd2E9RZU",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -520,12 +520,12 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754934127,
+        "expirationDate": 1754975302,
         "storeId": null
     },
     {
         "name": "__Secure-3PSIDTS",
-        "value": "sidts-CjIBUFGoh1_CgT31hJwuV0EUn6Rk3XcDtNY8_MXhPvpSVGEYnQpj1-aC3pAMn04oh45AYxAA",
+        "value": "sidts-CjIBUFGoh6fhL5qIlPQRz7hNrYQHcpegAA-6f7TMw54UIft_FqxpuAbhx9wlfyBF-Gv36hAA",
         "domain": ".youtube.com",
         "hostOnly": false,
         "path": "/",
@@ -535,7 +535,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1754933683,
+        "expirationDate": 1754975209,
         "storeId": null
     },
     {
@@ -593,7 +593,7 @@ const cookies = [
         "session": false,
         "firstPartyDomain": "",
         "partitionKey": null,
-        "expirationDate": 1786470128,
+        "expirationDate": 1786511304,
         "storeId": null
     },
     {
@@ -877,14 +877,12 @@ app.post("/downloadContent", (request, response) => {
     filter: (format) => format.itag === parseInt(itagValue),
     agent,
   })
-    .pipe(fs.createWriteStream("/tmp/test.mp4"))
+    .pipe(fs.createWriteStream("/tmp/test1.mp4"))
     .on("finish", () => {
       console.log("Video downloaded successfully!");
-      return response.send({
-        status: "success",
-        message: "video ready to download",
-        path: "/downloads/" + videoTitle + "." + container,
-      });
+      return response.download("/tmp/test1.mp4", `${videoTitle}.mp4` , () => {
+          fs.unlinkSync("/tmp/test1.mp4");
+      })
     })
     .on("error", (err) => {
       console.error("Error downloading video:", err);
